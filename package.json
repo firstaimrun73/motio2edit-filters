@@ -1,0 +1,21 @@
+{
+  "name": "motio2edit-filters",
+  "version": "1.0.0",
+  "description": "Motio2Edit photo filters — YouCut-style live thumbs. Filters only appear after photo upload. Express backend.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["photo-filters", "motio2edit", "youcut"],
+  "author": "firstaimrun73",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}
