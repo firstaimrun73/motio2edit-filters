@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Motio2Edit — Filters</title>
+  <meta name="theme-color" content="#FFFBF7" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="top">
+      <div>
+        <p class="brand">Motio2Edit</p>
+        <h1>Filters</h1>
+      </div>
+      <p class="tagline">100 live looks · your photo only</p>
+      <button type="button" id="btn-replace" class="btn outline hidden">Replace photo</button>
+    </header>
+
+    <section id="upload-gate" class="upload-gate">
+      <label class="dropzone" id="dropzone">
+        <input type="file" id="file-input" accept="image/*" hidden />
+        <div class="drop-icon">↑</div>
+        <h2>Drop image or tap to upload</h2>
+        <p>On-device style filters · no generative AI</p>
+        <p class="hint">Filters stay locked until you upload a photo</p>
+      </label>
+      <p class="footer-note">Upload a photo · pick a live look · adjust intensity · download</p>
+    </section>
+
+    <section id="editor" class="editor hidden">
+      <div class="stage" id="stage">
+        <div id="photo-wrap" class="photo-wrap">
+          <img id="main-photo" alt="Your photo" crossorigin="anonymous" />
+          <div id="overlays"></div>
+        </div>
+        <div id="busy" class="busy hidden">Working…</div>
+      </div>
+
+      <div class="controls-bar">
+        <button type="button" id="btn-reset" class="icon-btn" title="Reset">↺</button>
+        <button type="button" id="btn-compare" class="icon-btn" title="Hold to compare original">⧉</button>
+        <button type="button" id="btn-download" class="icon-btn warm" title="Download">↓</button>
+      </div>
+
+      <div class="tabs-row">
+        <button type="button" class="tab active" data-tab="filter">Filter</button>
+        <button type="button" class="tab" data-tab="adjust">Adjust</button>
+        <button type="button" id="btn-check" class="check" title="Save">✓</button>
+      </div>
+
+      <div id="panel-filter" class="panel">
+        <div class="cats" id="cats"></div>
+        <p class="count" id="count"></p>
+        <div class="strip" id="strip"></div>
+        <div class="intensity-row" id="intensity-row">
+          <span>Intensity</span>
+          <input type="range" id="intensity" min="0" max="100" value="100" />
+          <span id="intensity-val" class="tabular">100</span>
+        </div>
+      </div>
+
+      <div id="panel-adjust" class="panel hidden">
+        <input type="range" id="adj-slider" min="-80" max="80" value="0" />
+        <div class="adj-tools" id="adj-tools"></div>
+      </div>
+    </section>
+  </div>
+
+  <input type="file" id="file-input-2" accept="image/*" hidden />
+  <script src="/app.js"></script>
+</body>
+</html>
